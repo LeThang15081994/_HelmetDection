@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>BikesHelmets543.png</filename>
+	<path>D:\WorkSpace\_thangle15894\_AIproject\_HelmetDetection\data_image\images\train\images\BikesHelmets543.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>295</width>
+		<height>400</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>helmet_bikecycles</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>103</xmin>
+			<ymin>59</ymin>
+			<xmax>162</xmax>
+			<ymax>98</ymax>
+		</bndbox>
+	</object>
+</annotation>
