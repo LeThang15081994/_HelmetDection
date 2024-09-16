@@ -21,8 +21,8 @@ def train_model():
                 epochs = epochs_size,
                 imgsz = img_size,
                 batch = batch_size,
-                device = '0')
-    # device ='0' to choose GPU
+                device = 'cuda')
+    # device ='cuda' to choose GPU. if have muti GPU choose "0", "1"
    
 if __name__ == '__main__':
    #checks_torch()
