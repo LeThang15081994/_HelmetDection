@@ -10,8 +10,8 @@ def train_model():
     #config
     model = YOLOv10('yolov10s.pt')
 
-    model.info()
-    epochs_size = 100
+    #model.info()
+    epochs_size = 50
     img_size = 640
     batch_size = 16
     path_yaml = "../safety-Helmet-Reflective-Jacket/data.yaml"
@@ -21,10 +21,11 @@ def train_model():
                 epochs = epochs_size,
                 imgsz = img_size,
                 batch = batch_size,
-                device = 'cuda')
-    # device ='cuda' to choose GPU. if have muti GPU choose "0", "1"
+                device = '0')
+    # device ='0' to choose GPU
    
 if __name__ == '__main__':
    #checks_torch()
-   train_model()
-   
+   #train_model()
+   #val_model()
+   predic_model()
