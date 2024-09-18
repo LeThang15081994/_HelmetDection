@@ -52,7 +52,11 @@ def predic_model():
                   imgsz = img_size,
                   save = True, 
                   conf = 0.40)
-    print(len(results))
+    img = results[0].plot()
+    #img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    cv2.imshow("Predicted Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
    
 if __name__ == '__main__':
