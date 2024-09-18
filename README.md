@@ -10,7 +10,6 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
 
 - Phát hiện mũ bảo hiểm trong thời gian thực
 - Tích hợp với webcam hoặc video từ camera
-- Giao diện thân thiện, dễ sử dụng
 
 ## Yêu cầu
 
@@ -24,7 +23,7 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
    ```bash
    git clone https://github.com/LeThang15081994/_HelmetDection.git
    cd _HelmetDection
-2. **install libary:**
+2. **Install libary:**
    ``` bash
    pip install -r requirements.txt
    pip install -e .
