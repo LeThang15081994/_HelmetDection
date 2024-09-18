@@ -4,7 +4,7 @@
 
 ## Giới thiệu
 
-Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hiểm sử dụng công nghệ học máy. Mục tiêu của dự án là nhận diện xem người dùng có đội mũ bảo hiểm hay không, từ đó nâng cao an toàn giao thông.
+Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hiểm sử dụng công nghệ học máy. Mục tiêu của dự án là nhận diện xem người dùng có đội mũ bảo hiểm hay không, từ đó nâng cao an toàn trong lao động đặc biệt là ngành xây dựng công trình.
 
 ## Tính năng
 
@@ -14,6 +14,7 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
 ## Yêu cầu
 
 - Python 3.9.19
+- Yolov10
 - Các thư viện cần thiết khác (xem phần Cài đặt)
 
 ## Cài đặt
