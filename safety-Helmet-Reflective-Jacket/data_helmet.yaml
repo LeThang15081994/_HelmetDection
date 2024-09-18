@@ -1,0 +1,7 @@
+names:
+  - 'Safety-Helmet'
+  - 'Reflective-Jacket'
+nc: 2
+test: D:/WorkSpace/_thangle15894/_AIproject/_HelmetDetection/safety-Helmet-Reflective-Jacket/test/images
+train: D:/WorkSpace/_thangle15894/_AIproject/_HelmetDetection/safety-Helmet-Reflective-Jacket/train/images
+val: D:/WorkSpace/_thangle15894/_AIproject/_HelmetDetection/safety-Helmet-Reflective-Jacket/valid/images

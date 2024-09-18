@@ -11,10 +11,10 @@ def train_model():
     model = YOLOv10('yolov10s.pt')
 
     #model.info()
-    epochs_size = 50
+    epochs_size = 25
     img_size = 640
     batch_size = 16
-    path_yaml = "../safety-Helmet-Reflective-Jacket/data.yaml"
+    path_yaml = 'D:/WorkSpace/_thangle15894/_AIproject/_HelmetDetection/safety-Helmet-Reflective-Jacket/data_helmet.yaml'
 
     #train
     model.train(data=path_yaml,
@@ -30,7 +30,7 @@ def val_model():
     model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
 
     batch_size = 16
-    path_yaml = "../safety-Helmet-Reflective-Jacket/data.yaml"
+    path_yaml = "./safety-Helmet-Reflective-Jacket/data_helmet.yaml"
 
     #Val
     model.val(data=path_yaml,
@@ -41,15 +41,12 @@ def predic_model():
     #config
     model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
 
-    batch_size = 16
-    path_yaml = "../safety-Helmet-Reflective-Jacket/test/"
-
-    #Val
-    model.predict(source = "./safety-Helmet-Reflective-Jacket/test/images/", save = True, conf = 0.5)
+    #predic
+    model.predict(source = "./safety-Helmet-Reflective-Jacket/test/images/", save = True, conf = 0.60)
 
    
 if __name__ == '__main__':
    #checks_torch()
    #train_model()
    #val_model()
-   #predic_model()
+   predic_model()
