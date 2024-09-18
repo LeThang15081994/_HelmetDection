@@ -14,7 +14,7 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
 
 ## Yêu cầu
 
-- Python 3.x
+- Python 3.9.19
 - Thư viện OpenCV
 - TensorFlow hoặc PyTorch (tùy thuộc vào mô hình bạn sử dụng)
 - Các thư viện cần thiết khác (xem phần Cài đặt)
