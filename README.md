@@ -29,4 +29,22 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
    pip install -r requirements.txt
    pip install -e .
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+   
+### Huấn luyện mô hình
+
+Để huấn luyện mô hình YOLOv10, bạn có thể sử dụng đoạn mã dưới đây:
+
+```python
+from ultralytics import YOLOv10
+
+# Khởi tạo mô hình
+model = YOLOv10('yolov10.yaml')
+
+# Đường dẫn đến dữ liệu huấn luyện
+data_path = './data.yaml'  # Cập nhật với đường dẫn của bạn
+img_size = 640  # Kích thước hình ảnh đầu vào
+epochs = 50  # Số lượng epoch để huấn luyện
+
+# Huấn luyện mô hình
+model.train(data=data_path, imgsz=img_size, epochs=epochs, batch=16, device='cuda')
 
