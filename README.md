@@ -16,7 +16,6 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
 
 - Python 3.9.19
 - Thư viện OpenCV
-- TensorFlow hoặc PyTorch (tùy thuộc vào mô hình bạn sử dụng)
 - Các thư viện cần thiết khác (xem phần Cài đặt)
 
 ## Cài đặt
@@ -26,3 +25,8 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
    ```bash
    git clone https://github.com/LeThang15081994/_HelmetDection.git
    cd _HelmetDection
+2. **install libary:**
+   ``` bash
+   pip install -r requirements.txt
+   pip install -e .
+
