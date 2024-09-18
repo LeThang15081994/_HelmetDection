@@ -1,5 +1,7 @@
 from ultralytics import YOLOv10
 import torch
+import matplotlib.pyplot as plt
+import cv2
 
 def checks_torch():
     if torch.cuda.is_available(): 
@@ -31,18 +33,26 @@ def val_model():
 
     batch_size = 16
     path_yaml = "./safety-Helmet-Reflective-Jacket/data_helmet.yaml"
+    img_size = 640
 
     #Val
     model.val(data=path_yaml,
-                batch = batch_size)
+                batch = batch_size,
+                imgsz = img_size,
+                device = 'cuda',
+                split='test')
 
 def predic_model(): 
     
     #config
     model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
-
+    img_size = 640
     #predic
-    model.predict(source = "./safety-Helmet-Reflective-Jacket/test/images/", save = True, conf = 0.60)
+    results= model.predict(source = "./testImg.jpg", 
+                  imgsz = img_size,
+                  save = True, 
+                  conf = 0.40)
+    print(len(results))
 
    
 if __name__ == '__main__':
