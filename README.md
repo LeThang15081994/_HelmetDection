@@ -30,9 +30,9 @@ Dự án **Helmet Detection** là một ứng dụng phát hiện mũ bảo hi�
    pip install -e .
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
    
-### Huấn luyện mô hình
+## Huấn luyện mô hình
 
-Để huấn luyện mô hình YOLOv10, bạn có thể sử dụng đoạn mã dưới đây:
+Sử dụng Yolov10 để huấn luyện tập dữ liệu custom, bạn có thể sử dụng đoạn mã dưới đây:
 
 ```python
 from ultralytics import YOLOv10
@@ -53,8 +53,27 @@ batch_size = 16      # kich thước batch size
                 batch = batch_size,
                 device = 'cuda') # device chon chạy trên GPU hoặc CPU.
 ```
-# Dự Đoán Hình Ảnh với YOLOv10
 
+## Validation
+Để thực hiện Validation trên hình ảnh bằng mô hình YOLOv10, bạn có thể sử dụng đoạn mã Python sau đây:
+
+```python
+path_model = './yolov10/runs/detect/train/weights/best.pt'
+path_yaml = './safety-Helmet-Reflective-Jacket/data_helmet.yaml'
+batch_size = 16
+img_size = 640
+devices = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#Load model
+model = YOLOv10(path_model)
+
+model.val(data=path_yaml,
+          batch = batch_size,
+          imgsz = img_size,
+          device = devices,
+          split='test')
+```
+
+## Dự Đoán Hình Ảnh.
 Để thực hiện dự đoán trên hình ảnh bằng mô hình YOLOv10, bạn có thể sử dụng đoạn mã Python sau đây:
 
 ```python
@@ -74,4 +93,11 @@ cv2.imshow("Predicted Image", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+# Kết Quả Dự Đoán
+Hình ảnh đầu vào:
+![Predicted Image 1](predict/testImg.jpg)
+
+Hình ảnh dự đoán từ mô hình:
+
+![Predicted Image 1](predict/testImg.jpg)
 
