@@ -7,51 +7,40 @@ def checks_torch():
     if torch.cuda.is_available(): 
         print('it Work')
 
-def train_model(): 
+def train_model(path_model, path_yaml, img_size, batch_size, devices, epochs_size): 
     
-    #config
-    model = YOLOv10('yolov10s.pt')
+    #Load model
+    model = YOLOv10(path_model)
     
     #model.info()
     epochs_size = 25
-    img_size = 640
-    batch_size = 16
-    path_yaml = 'D:/WorkSpace/_thangle15894/_AIproject/_HelmetDetection/safety-Helmet-Reflective-Jacket/data_helmet.yaml'
-    devices = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     #train
     model.train(data=path_yaml,
                 epochs = epochs_size,
                 imgsz = img_size,
                 batch = batch_size,
-                device = devices)
-    # device ='cuda' to choose GPU
-
-def val_model(): 
+                device = devices)  # device ='cuda' to choose GPU
+  
+def val_model(path_model, path_yaml, img_size, batch_size, devices): 
     
-    #config
-    model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
+    #Load model
+    model = YOLOv10(path_model)
 
-    batch_size = 16
-    path_yaml = "./safety-Helmet-Reflective-Jacket/data_helmet.yaml"
-    img_size = 640
-    devices = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    #Val
     model.val(data=path_yaml,
                 batch = batch_size,
                 imgsz = img_size,
                 device = devices,
                 split='test')
 
-def predic_model(): 
+def predic_model(path_model, img_size, confiden, path_predict): 
     
     #config
-    model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
-    img_size = 640
+    model = YOLOv10(path_model)
     #predic
-    results= model.predict(source = "./testImg.jpg", 
+    results= model.predict(source = path_predict, 
                             imgsz = img_size,
                             save = True, 
-                            conf = 0.40)
+                            conf = confiden)
     img = results[0].plot()
     #img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     cv2.imshow("Predicted Image", img)
@@ -60,7 +49,18 @@ def predic_model():
 
    
 if __name__ == '__main__':
+   
+   #config
+   path_model = './yolov10/runs/detect/train/weights/best.pt'
+   path_yaml = './safety-Helmet-Reflective-Jacket/data_helmet.yaml'
+   path_predict = './testImg.jpg'
+   epochs_size = 25
+   batch_size = 16
+   img_size = 640
+   devices = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+   confiden = 0.4
+
    #checks_torch()
-   #train_model()
-   #val_model()
-   predic_model()
+   #train_model('yolov10s.pt', path_yaml, img_size, batch_size, devices, epochs_size)
+   val_model(path_model, path_yaml, img_size, batch_size, devices)
+   predic_model(path_model, img_size,confiden, path_predict)
