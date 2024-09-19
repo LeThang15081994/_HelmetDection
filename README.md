@@ -52,4 +52,26 @@ batch_size = 16      # kich thước batch size
                 imgsz = img_size,
                 batch = batch_size,
                 device = 'cuda') # device chon chạy trên GPU hoặc CPU.
+```
+# Dự Đoán Hình Ảnh với YOLOv10
+
+Để thực hiện dự đoán trên hình ảnh bằng mô hình YOLOv10, bạn có thể sử dụng đoạn mã Python sau đây:
+
+```python
+# Config
+model = YOLOv10('./yolov10/runs/detect/train/weights/best.pt')
+img_size = 640
+
+# Dự đoán
+results = model.predict(source="./testImg.jpg", 
+                       imgsz=img_size,
+                       save=True, 
+                       conf=0.40)
+
+# Vẽ kết quả trên hình ảnh
+img = results[0].plot()  # Lấy hình ảnh đầu tiên từ kết quả
+cv2.imshow("Predicted Image", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
 
