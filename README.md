@@ -53,9 +53,17 @@ batch_size = 16      # kich thước batch size
                 batch = batch_size,
                 device = 'cuda') # device chon chạy trên GPU hoặc CPU.
 ```
+### Hình ảnh kết quả huấn luyện:
+
+Hình ảnh từ kết quả đánh giá mô hình:
+
+| ![Validation Image 1](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/F1_curve.png) | ![Validation Image 2](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/PR_curve.png) | ![Validation Image 3](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/P_curve.png) | ![Validation Image 4](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/R_curve.png) |
+|---|---|---|---|
+| ![Validation Image 5](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/confusion_matrix.png) | ![Validation Image 6](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/confusion_matrix_normalized.png) | ![Validation Image 7](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch0_labels.jpg) | ![Validation Image 8](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch0_pred.jpg) |
+| ![Validation Image 9](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch1_labels.jpg) | ![Validation Image 10](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch1_pred.jpg) | ![Validation Image 11](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch2_labels.jpg) | ![Validation Image 12](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch2_pred.jpg) |
 
 ## Validation
-Để thực hiện Validation trên hình ảnh bằng mô hình YOLOv10, bạn có thể sử dụng đoạn mã Python sau đây:
+Để thực hiện Validation trên hình ảnh bằng mô hình đã huấn luyện:
 
 ```python
 path_model = './yolov10/runs/detect/train/weights/best.pt'
@@ -72,7 +80,7 @@ model.val(data=path_yaml,
           device = devices,
           split='test')
 ```
-### Hình Ảnh Kết Quả Đánh Giá
+### Hình ảnh kết quả đánh giá:
 
 Hình ảnh từ kết quả đánh giá mô hình:
 
@@ -82,7 +90,7 @@ Hình ảnh từ kết quả đánh giá mô hình:
 | ![Validation Image 9](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch1_labels.jpg) | ![Validation Image 10](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch1_pred.jpg) | ![Validation Image 11](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch2_labels.jpg) | ![Validation Image 12](https://github.com/LeThang15081994/_HelmetDection/blob/master/val/val_batch2_pred.jpg) |
 
 ## Dự Đoán Hình Ảnh.
-Để thực hiện dự đoán trên hình ảnh bằng mô hình YOLOv10, bạn có thể sử dụng đoạn mã Python sau đây:
+Để thực hiện dự đoán trên hình ảnh bằng mô hình đã huấn luyện:
 
 ```python
 # Config
