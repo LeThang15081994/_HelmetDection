@@ -95,7 +95,7 @@ cv2.destroyAllWindows()
 ```
 # Kết Quả Dự Đoán
 Hình ảnh đầu vào:
-![Predicted Image 1](predict/testImg.jpg)
+![Test Image](https://github.com/LeThang15081994/_HelmetDection/raw/master/testImg.jpg)
 
 Hình ảnh dự đoán từ mô hình:
 
