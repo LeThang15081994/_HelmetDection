@@ -10,14 +10,14 @@ class HelmetDetection:
         self.img_size = img_size
         self.batch_size = batch_size
         self.epochs_size = epochs_size
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        
-
-    def checks_torch(self):
         if torch.cuda.is_available(): 
+            self.device = torch.device('cuda')
             print('It works with GPU.')
         else:
+            self.device = torch.device('cpu')
             print('Using CPU.')
+        
+
 
     def train_model(self, path_pretrain):
         self.model = YOLOv10(path_pretrain) # đường dẫn tới pretrain yolov10s.pt
