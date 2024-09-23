@@ -1,6 +1,6 @@
-# Helmet Detection
+# Helmet Detection ![Version](https://img.shields.io/badge/version-1.0-green.svg)
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 
 ## Giới thiệu
 
